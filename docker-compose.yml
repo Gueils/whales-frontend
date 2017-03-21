@@ -1,0 +1,54 @@
+version: '2'
+
+volumes:
+  postgres-data:
+    driver: local
+  gems:
+    driver: local
+
+services:
+  db:
+    image: postgres:9.5.3
+    ports:
+      - 5434:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./tmp:/tmp
+    environment:
+      POSTGRES_PASSWORD: P4Ssw0rD!
+
+  web: &app
+    image: icalialabs/whales-frontend:development
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    command: foreman start -f Procfile.hot
+    working_dir: /usr/src/app
+    entrypoint: /usr/src/app/development-entrypoint
+    volumes:
+      - .:/usr/src/app
+      - gems:/usr/local/bundle
+    stdin_open: true
+    tty: true
+    ports:
+      - 3000:3000
+      - 5000:5000
+      - 3500:3500
+    links:
+      - db
+    environment: &app_environment
+      PATH: /usr/src/app/bin:/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      DATABASE_URL: postgres://postgres:P4Ssw0rD!@db:5432/whales_frontend_development
+      RAILS_ENV: development
+      RACK_ENV: development
+
+  test:
+    <<: *app
+    command: bash
+    ports:
+      - 80:80
+    environment:
+      <<: *app_environment
+      DATABASE_URL: postgres://postgres:P4Ssw0rD!@db:5432/whales_frontend_test
+      RAILS_ENV: test
+      RACK_ENV: test
