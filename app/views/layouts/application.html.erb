@@ -3,7 +3,8 @@
   <head>
     <title>App</title>
     <%= csrf_meta_tags %>
-
+    <%= env_javascript_include_tag(hot: ['http://0.0.0.0:3500/vendor-bundle.js',
+    'http://0.0.0.0:3500/app-bundle.js']) %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
