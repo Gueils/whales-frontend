@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="whaleL.svg" height="300px" alt="Whales by Icalia" />
+  <img src="whales.png" height="300px" alt="Whales by Icalia" />
 </p>
