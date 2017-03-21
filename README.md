@@ -1,2 +1,3 @@
-# whales_frontend
-A frontend for WhalesAPI
+<p align="center">
+  <img src="whales.png" height="300px" alt="Whales by Icalia" />
+</p>
