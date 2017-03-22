@@ -1,0 +1,31 @@
+'use strict';
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _reduxThunk = require('redux-thunk');var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+var _nock = require('nock');var _nock2 = _interopRequireDefault(_nock);
+var _LandingActions = require('../actions/LandingActions');
+
+
+
+var _LandingConstants = require('../constants/LandingConstants');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+describe('actions', function () {
+  it('should create an action to receive a dockerfile', function () {
+    var dockerfile = '';
+    var expectedAction = {
+      type: _LandingConstants.RECEIVE_DOCKERFILE,
+      dockerfile: dockerfile };
+
+    expect((0, _LandingActions.receiveDockerfile)('')).toEqual(expectedAction);
+  });
+
+  it('should create an action to receive a dockercompos', function () {
+    var dockercompose = '';
+    var expectedAction = {
+      type: _LandingConstants.RECEIVE_DOCKERCOMPOSE,
+      dockercompose: dockercompose };
+
+    expect((0, _LandingActions.receiveDockercompose)('')).toEqual(expectedAction);
+  });
+}); /* global describe, xit, it, expect, afterEach */

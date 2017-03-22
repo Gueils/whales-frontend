@@ -1,0 +1,74 @@
+'use strict';
+var _reduxMockStore = require('redux-mock-store');var _reduxMockStore2 = _interopRequireDefault(_reduxMockStore);
+var _reduxThunk = require('redux-thunk');var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+var _nock = require('nock');var _nock2 = _interopRequireDefault(_nock);
+var _LandingActions = require('../actions/LandingActions');
+
+
+
+
+var _LandingConstants = require('../constants/LandingConstants');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+var middlewares = [_reduxThunk2.default]; /* global describe, xit, it, expect, afterEach */
+var mockStore = (0, _reduxMockStore2.default)(middlewares);
+
+describe('actions', function () {
+  it('should create an action to receive a dockerfile', function () {
+    var dockerfile = '';
+    var expectedAction = {
+      type: _LandingConstants.RECEIVE_DOCKERFILE,
+      dockerfile: dockerfile };
+
+    expect((0, _LandingActions.receiveDockerfile)('')).toEqual(expectedAction);
+  });
+
+  it('should create an action to receive a dockercompos', function () {
+    var dockercompose = '';
+    var expectedAction = {
+      type: _LandingConstants.RECEIVE_DOCKERCOMPOSE,
+      dockercompose: dockercompose };
+
+    expect((0, _LandingActions.receiveDockercompose)('')).toEqual(expectedAction);
+  });
+
+  afterEach(function () {
+    _nock2.default.cleanAll();
+  });
+
+  it('creates RECEIVE_DOCKERFILE & RECEIVE_DOCKERCOMPOSE when analizing repository has been done', function () {
+    (0, _nock2.default)('https://whalesapi.dev/').
+    get('/analize').
+    reply(200, {
+      body: {
+        dockerfile: '',
+        dockercompose: '' } });
+
+
+
+    var expectedActions = [
+    {
+      type: _LandingConstants.RECEIVE_DOCKERFILE,
+      dockerfile: '' },
+
+    {
+      type: _LandingConstants.RECEIVE_DOCKERCOMPOSE,
+      dockercompose: '' }];
+
+
+
+    var store = mockStore({
+      repository: '',
+      repositories: [],
+      dockerfile: '',
+      dockercompose: '' });
+
+
+    return store.dispatch((0, _LandingActions.analizeRepository)('https://fake.git')).
+    then(function () {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});

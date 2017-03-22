@@ -1,0 +1,16 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true }); /* global document */
+
+var getCSRFToken = exports.getCSRFToken = function getCSRFToken() {
+  var metas = document.getElementsByTagName('meta');
+
+  for (var i = 0; i < metas.length; i += 1) {
+    var meta = metas[i];
+    if (meta.getAttribute('name') === 'csrf-token') {
+      return meta.getAttribute('content');
+    }
+  }
+
+  return null;
+};exports.default =
+
+getCSRFToken;

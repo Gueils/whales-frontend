@@ -1,0 +1,24 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.analizeRepository = exports.receiveDockercompose = exports.receiveDockerfile = undefined;var _LandingConstants = require('../constants/LandingConstants');
+
+
+var _RepositoryApi = require('../../../lib/api/RepositoryApi');var RepositoryApi = _interopRequireWildcard(_RepositoryApi);function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}
+
+var receiveDockerfile = exports.receiveDockerfile = function receiveDockerfile(dockerfile) {return {
+    type: _LandingConstants.RECEIVE_DOCKERFILE,
+    dockerfile: dockerfile };};
+
+
+var receiveDockercompose = exports.receiveDockercompose = function receiveDockercompose(dockercompose) {return {
+    type: _LandingConstants.RECEIVE_DOCKERCOMPOSE,
+    dockercompose: dockercompose };};
+
+
+var analizeRepository = exports.analizeRepository = function analizeRepository(repository) {return function (dispatch) {return (
+      RepositoryApi.analize(repository).
+      then(function (response) {
+        dispatch(receiveDockerfile(response.dockerfile));
+        dispatch(receiveDockercompose(response.dockercompose));
+      }).
+      catch(function (error) {
+        console.log(error);
+      }));};};

@@ -1,0 +1,49 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  &__form-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &__form {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+
+      &__label {
+      }
+
+      &__input,
+      &__input:focus{
+        outline: none;
+        border: none;
+        border-bottom: 1px solid blue;
+      }
+    }
+
+    &__files {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+
+      &__dockerfile {
+        flex-grow: 1;
+      }
+
+      &__dockercompose {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+

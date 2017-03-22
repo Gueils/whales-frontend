@@ -1,5 +1,20 @@
-// Any non webpack assets can be imported here
-// Others will be served via webpack-dev-server
-.something {
-  color: pink;
+@import url('//fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #F4F7F9;
+  color: #334B57;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }

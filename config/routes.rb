@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
+  get '/', to: 'landing#index'
+  post '/analize', to: 'analizer#analize'
 end
