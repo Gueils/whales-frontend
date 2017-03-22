@@ -5,6 +5,8 @@ volumes:
     driver: local
   gems:
     driver: local
+  node_modules:
+    driver: local
 
 services:
   db:
@@ -28,11 +30,14 @@ services:
     volumes:
       - .:/usr/src/app
       - gems:/usr/local/bundle
+      - node_modules:/usr/src/app/client/node_modules
+      - /var/run/docker.sock:/var/run/docker.sock
+
     stdin_open: true
     tty: true
     ports:
       - 3000:3000
-      - 5000:5000
+      - 80:5000
       - 3500:3500
     links:
       - db
@@ -41,12 +46,12 @@ services:
       DATABASE_URL: postgres://postgres:P4Ssw0rD!@db:5432/whales_frontend_development
       RAILS_ENV: development
       RACK_ENV: development
+      CURRENT_DIRECTORY: ${PWD}
+      API_BASE_URI: whales.herokuapp.com
 
   test:
     <<: *app
     command: bash
-    ports:
-      - 80:80
     environment:
       <<: *app_environment
       DATABASE_URL: postgres://postgres:P4Ssw0rD!@db:5432/whales_frontend_test
