@@ -1,5 +1,4 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans');
-
+@import url('//fonts.googleapis.com/css?family=Space+Mono');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,14 +6,23 @@
 }
 
 html, body {
-  background: #F4F7F9;
+  background: white;
   color: #334B57;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+}
+
+.hidden {
+  display: none !important;
 }
