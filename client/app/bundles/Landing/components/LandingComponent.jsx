@@ -1,29 +1,36 @@
+/* global document, LoadingAnimation */
 import React, { PropTypes } from 'react';
 
 export default class LandingComponent extends React.Component {
   static propTypes = {
     sendSourceUrl: PropTypes.func.isRequired,
     repository: PropTypes.string.isRequired,
-    dockerfile: PropTypes.string.isRequired,
-    dockercompose: PropTypes.string.isRequired,
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
+    this.sourceUrlInput.disabled = true;
+
+    const loadingAnimation = document.getElementsByClassName('loading-animation')[0];
+    const prefixLoadingAnimation = document.getElementsByClassName('prefix-loading-animation')[0];
+
+    prefixLoadingAnimation.innerHTML = 'Dockerizing...';
+
+    new LoadingAnimation(loadingAnimation, ['&ndash;', '\\', '|', '/'], 150).animate();
+
     this.props.sendSourceUrl(this.sourceUrlInput.value);
   }
 
   render() {
     const repository = this.props.repository;
-    const dockerfile = this.props.dockerfile;
-    const dockercompose = this.props.dockercompose;
+
     return (
       <div className="app__form-container">
         <form className="app__form-container__form" onSubmit={this.handleSubmit}>
           <label htmlFor="name" className="app__form-container__form__label">
-            Github Repository
+            <span className="prefix-loading-animation">Dockerize your App Right Away</span><span className="loading-animation"></span>
           </label>
           <input
             ref={(input) => { this.sourceUrlInput = input; }}
@@ -31,25 +38,9 @@ export default class LandingComponent extends React.Component {
             type="text"
             defaultValue={repository}
             className="app__form-container__form__input"
+            placeholder="Paste a Repo URL"
           />
         </form>
-        <div className="app__form-container__files">
-          <div className="app__form-container__files__dockerfile">
-            <pre>
-              <code className="dockerfil">
-                {dockerfile}
-              </code>
-            </pre>
-          </div>
-          <div className="app__form-container__files__dockercompose">
-            <pre>
-              <code className="yaml">
-                {dockercompose}
-              </code>
-            </pre>
-          </div>
-          <script>hljs.initHighlightingOnLoad();</script>
-        </div>
       </div>
     );
   }
