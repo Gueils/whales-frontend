@@ -3,7 +3,7 @@ import {
   ANALYZE_REPOSITORY,
   RECEIVE_DOCKERFILE,
   RECEIVE_DOCKERCOMPOSE,
-  ADD_REPOSITORY } from '../constants/LandingConstants';
+  RECEIVE_REPOSITORIES } from '../constants/LandingConstants';
 
 const landingDefaultState = {
   repository: '',
@@ -23,12 +23,8 @@ const repository = (state = landingDefaultState, action) => {
 
 const repositories = (state = landingDefaultState, action) => {
   switch (action.type) {
-    case ADD_REPOSITORY: {
-      const newRepository = action.repository;
-      return Object.assign({}, state, {
-        repository: newRepository,
-        repositories: [...state.repositories, newRepository],
-      });
+    case RECEIVE_REPOSITORIES: {
+      return action.repositories;
     }
     default:
       return state;

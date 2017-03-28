@@ -32,6 +32,7 @@ export default class LandingContainer extends React.Component {
         <LandingComponent
           sendSourceUrl={this.sendSourceUrl}
           repository={state.repository}
+          repositories={state.repositories}
         />
       </div>
     );
