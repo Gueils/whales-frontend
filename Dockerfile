@@ -16,11 +16,20 @@ RUN apt-get -y install unzip
 RUN mkdir -p /code
 
 
-ENV PATH=/usr/src/app/bin:$PATH RAILS_ENV=development RACK_ENV=development LANG=C.UTF-8
-WORKDIR /usr/src/app
+ENV PATH=/usr/src/app/bin:$PATH RAILS_ENV=production RACK_ENV=production LANG=C.UTF-8
 
-ADD ./Gemfile* /usr/src/app/
+WORKDIR /code
+
+ADD ./Gemfile* /code/
 
 RUN bundle install
 
-ADD . /usr/src/app
+ADD . /code
+
+RUN cd /code/client && npm install --save
+
+RUN cd client && npm run build:production:server
+
+RUN rails assets:precompile
+
+EXPOSE 5000 3500
