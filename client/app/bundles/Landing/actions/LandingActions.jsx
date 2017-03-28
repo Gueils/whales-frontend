@@ -1,8 +1,9 @@
-/* global WorkspaceController, document */
+/* global WorkspaceController, document, window */
 
 import {
   RECEIVE_DOCKERFILE,
-  RECEIVE_DOCKERCOMPOSE } from '../constants/LandingConstants';
+  RECEIVE_DOCKERCOMPOSE,
+  RECEIVE_REPOSITORIES } from '../constants/LandingConstants';
 import * as RepositoryApi from '../../../lib/api/RepositoryApi';
 
 export const receiveDockerfile = dockerfile => ({
@@ -15,11 +16,17 @@ export const receiveDockercompose = dockercompose => ({
   dockercompose,
 });
 
+export const receiveRepositories = repositories => ({
+  type: RECEIVE_REPOSITORIES,
+  repositories,
+})
+
 export const updateFilesContainer = (dockerfile, dockercompose) => {
   const prefixLoadingAnimation = document.getElementsByClassName('prefix-loading-animation')[0];
   prefixLoadingAnimation.innerHTML = "You're welcome!";
 
   const loadingAnimation = document.getElementsByClassName('loading-animation')[0];
+  loadingAnimation.className = "useless";
   loadingAnimation.innerHTML = ' :)';
   WorkspaceController.hideRestOfTheLanding().showFiles(dockerfile, dockercompose);
 };

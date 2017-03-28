@@ -48,6 +48,8 @@ services:
       RACK_ENV: development
       CURRENT_DIRECTORY: ${PWD}
       API_BASE_URI: whales.herokuapp.com
+    env_file:
+      - dev.env
 
   test:
     <<: *app

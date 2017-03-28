@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
 gem 'react_on_rails', '~> 6.5', '>= 6.5.1'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'httparty'
 
 group :production, :staging do
   gem 'rails_12factor'

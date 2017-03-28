@@ -3,6 +3,8 @@
     background-color: rgba(70,208,237,0.15);
     height: 210px;
     position: relative;
+    display: flex;
+    justify-content: center;
 
     &__container {
       display: flex;
@@ -21,8 +23,8 @@
       }
 
       &__logo {
-        margin: 131px auto;
         z-index: 12;
+        margin: 127px auto;
 
         img {
           display: flex;
@@ -345,18 +347,31 @@
         padding: 20px 0;
       }
 
-      &__input,
-      &__input:focus{
-        background-color: #ECF4FF;
-        width: 542px;
-        outline: none;
-        border-radius: 10px;
-        border: 2px solid #0066ee;
-        font-size: 24px;
-        line-height: 70px;
-        padding: 5px 10px;
+      &__container {
         margin: 53px 0 104px 0;
-        text-align: center;
+        display: flex;
+
+        div {
+          display: flex;
+        }
+
+        &__input,
+        &__input:focus{
+          background-color: #ECF4FF;
+          width: 542px;
+          outline: none;
+          border-radius: 10px;
+          border: 2px solid #0066ee;
+          font-size: 24px;
+          line-height: 70px;
+          padding: 5px 10px;
+          text-align: center;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          margin: auto auto auto 20px;
+        }
       }
     }
 
