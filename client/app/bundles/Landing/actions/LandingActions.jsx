@@ -23,11 +23,22 @@ export const receiveRepositories = repositories => ({
 
 export const updateFilesContainer = (dockerfile, dockercompose) => {
   const prefixLoadingAnimation = document.getElementsByClassName('prefix-loading-animation')[0];
-  prefixLoadingAnimation.innerHTML = "You're welcome!";
+  const linkToGithub = document.getElementById('load-repos');
+  const selectInput = document.getElementById('sourceRepos');
+  const sourceUrl = document.getElementById('sourceUrl');
 
-  const loadingAnimation = document.getElementsByClassName('loading-animation')[0];
-  loadingAnimation.className = "useless";
-  loadingAnimation.innerHTML = ' :)';
+  if (selectInput) {
+    selectInput.disabled = false;
+  } else {
+    sourceUrl.disabled = false;
+  }
+
+  if (linkToGithub) {
+
+    linkToGithub.className = '';
+  }
+
+  prefixLoadingAnimation.innerHTML = "You're welcome!";
   WorkspaceController.hideRestOfTheLanding().showFiles(dockerfile, dockercompose);
 };
 
@@ -39,6 +50,9 @@ export const analizeRepository = repository => (dispatch) => {
       updateFilesContainer(response.data.dockerfile, response.data.dockercompose);
     })
     .catch((error) => {
-      console.log(error);
+      if (error) {
+        console.log(error);
+        alert("We're very sorry but something went wrong. Don't worry, we already got the bad news and we'll work hard to help you better.")
+      }
     });
 };

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getCSRFToken } from '../utils/Utils';
 
-export const analize = (sourceUrl) => {
+export function analize(sourceUrl) {
   const repository = {
     url: sourceUrl,
   };
@@ -14,5 +14,3 @@ export const analize = (sourceUrl) => {
     },
   });
 };
-
-export default analize;

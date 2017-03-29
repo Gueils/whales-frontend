@@ -1,3 +1,123 @@
+@-moz-keyframes floating {
+  from {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -moz-transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    -o-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  to {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes floating {
+  from {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -moz-transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    -o-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  to {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-ms-keyframes floating {
+  from {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -moz-transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    -o-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  to {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-o-keyframes floating {
+  from {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -moz-transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    -o-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  to {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  from {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65% {
+    -moz-transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    -o-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  to {
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 .whales {
   &__header {
     background-color: rgba(70,208,237,0.15);
@@ -68,15 +188,53 @@
     align-self:center;
     width: 1097px;
     justify-content: space-between;
-    margin: -100px 0;
+    margin: -100px 0 60px 0;
 
     &__dockerfile,
     &__dockercompose {
       display: flex;
-      background-color: #002;
+      background-color: #2b2b2b;
       border-radius: 3px;
       padding: 20px;
       width: 530px;
+
+      a {
+        z-index: 1000;
+        left: 480px;
+        top: -10px;
+        position: relative;
+        color: white;
+      }
+    }
+  }
+
+  &__star-us {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      line-height: 28px;
+      padding: 10px 30px;
+      border-radius: 2px;
+      background-color: #006CF4;
+      color: white;
+
+      span {
+        margin: auto auto auto 10px;
+      }
+    }
+  }
+
+  &__star-us > div {
+    display: flex;
+    margin: 10px 0 20px 0;
+    line-height: 26px;
+
+    img {
+      margin: 0 10px 0 -10px;
     }
   }
 
@@ -220,11 +378,12 @@
       margin: 143px auto auto auto;
       display: flex;
       align-self: center;
-      width: 50%;
+      width: 600px;
       justify-content: center;
+      overflow: hidden;
 
       &__item {
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
 
         a {
@@ -248,6 +407,18 @@
           }
         }
 
+        a.php {
+          background-color: #7564B8;
+        }
+
+        a.python {
+          background-color: #FED149;
+        }
+
+        a.java {
+          background-color: #0071BF;
+        }
+
         &__pool {
           display: flex;
           flex-direction: row;
@@ -268,10 +439,16 @@
               align-self: center;
 
               img {
-                animation: floating 5s infinite;
-                animation-timing-function: ease-in-out;
                 -webkit-animation: floating 5s infinite;
                 -webkit-animation-timing-function: ease-in-out;
+                -moz-animation: floating 5s infinite;
+                -moz-animation-timing-function: ease-in-out;
+                -ms-animation: floating 5s infinite;
+                -ms-animation-timing-function: ease-in-out;
+                -o-animation: floating 5s infinite;
+                -o-animation-timing-function: ease-in-out;
+                animation: floating 5s infinite;
+                animation-timing-function: ease-in-out;
               }
             }
 
@@ -290,13 +467,22 @@
               align-self: center;
 
               img {
-                animation: floating 5s infinite;
-                animation-timing-function: ease-in-out;
-                animation-delay: 1.618s;
                 -webkit-animation: floating 5s infinite;
                 -webkit-animation-timing-function: ease-in-out;
                 -webkit-animation-delay: 1.618s;
-              }
+                -moz-animation: floating 5s infinite;
+                -moz-animation-timing-function: ease-in-out;
+                -moz-animation-delay: 1.618s;
+                -ms-animation: floating 5s infinite;
+                -ms-animation-timing-function: ease-in-out;
+                -ms-animation-delay: 1.618s;
+                -o-animation: floating 5s infinite;
+                -o-animation-timing-function: ease-in-out;
+                -o-animation-delay: 1.618s;
+                animation: floating 5s infinite;
+                animation-timing-function: ease-in-out;
+                animation-delay: 1.618s;
+             }
 
             }
           }
@@ -306,6 +492,9 @@
             color: #EE0F14;
             padding: 82px 0 0 0;
           }
+          &__right.php { color: #7564B8; }
+          &__right.python { color: #FED149; }
+          &__right.java { color: #0071BF; }
         }
       }
     }
@@ -367,6 +556,22 @@
           padding: 5px 10px;
           text-align: center;
         }
+
+        select {
+          font-size: 24px;
+          line-height: 70px;
+          border-radius: 10px;
+          border: 2px solid #0066ee;
+          background-color: #ECF4FF;
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+          font-size: 37px;
+          margin: 0 10px 0 30px;
+        }
+
         a {
           display: flex;
           align-items: center;
@@ -390,25 +595,5 @@
         flex-grow: 1;
       }
     }
-  }
-}
-
-@-moz-keyframes floating,
-@-webkit-keyframes floating,
-@keyframes floating {
-  0% {
-    -moz-transform: translate(0, 0px);
-    -webkit-transform: translate(0, 0px);
-    -transform: translate(0, 0px);
-  }
-  65%  {
-    -moz-transform: translate(0, 8px);
-    -webkit-transform: translate(0, 8px);
-    -transform: translate(0, 8px);
-  }
-  100%   {
-    -moz-transform: translate(0, -0px);
-    -webkit-transform: translate(0, -0px);
-    -transform: translate(0, -0px);
   }
 }

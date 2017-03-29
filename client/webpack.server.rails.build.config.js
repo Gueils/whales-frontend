@@ -10,7 +10,7 @@ const devBuild = process.env.NODE_ENV !== 'production';
 
 config.output = {
   filename: '[name]-bundle.js',
-    path: __dirname + '../app/assets/webpack',
+    path: '/code/app/assets/webpack',
 publicPath: '/assets/',
 };
 
