@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build:test": "npm run build:client && npm run build:server",
-    "build:production": "NODE_ENV=production webpack --config webpack.config.js",
+    "build:production": "NODE_ENV=production webpack --config webpack.server.rails.build.config.js",
     "build:development": "webpack -w --config webpack.config.js",
     "lint": "eslint --ext .js,.jsx .",
     "test": "jest",
