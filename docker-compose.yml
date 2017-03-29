@@ -20,15 +20,14 @@ services:
       POSTGRES_PASSWORD: P4Ssw0rD!
 
   web: &app
-    image: icalialabs/whales_frontend
+    image: whalesil/whales-frontend:latest
     command: foreman start -f Procfile
-    working_dir: /code
+    working_dir: /usr/src/app
     volumes:
-      - .:/usr/src/app
       - gems:/usr/local/bundle
       - node_modules:/usr/src/app/client/node_modules
       - /var/run/docker.sock:/var/run/docker.sock
-
+      - /tmp:/code
     stdin_open: true
     tty: true
     ports:
@@ -43,4 +42,3 @@ services:
       API_BASE_URI: whales.herokuapp.com
     env_file:
       - dev.env
-

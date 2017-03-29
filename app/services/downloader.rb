@@ -16,7 +16,7 @@ class Downloader
   end
 
   def repository_directory
-    Rails.root.join('tmp', hashed_directory)
+    "/code/#{hashed_directory}"
   end
 
   def hashed_directory

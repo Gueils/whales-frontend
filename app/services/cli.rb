@@ -22,6 +22,6 @@ class Cli
   end
 
   def global_directory
-    "#{ENV['CURRENT_DIRECTORY']}/tmp/#{downloaded_file_path}"
+    "/tmp/#{downloaded_file_path}"
   end
 end
