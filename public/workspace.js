@@ -7,7 +7,7 @@ class WorkspaceController {
             'whales__features',
             'whales__contribute',
             'whales__belugas',
-            'whales__footer',
+            'whales__footer'
         ];
     }
 

@@ -1,8 +1,7 @@
-//= require app-bundle
 //= require vendor-bundle
+//= require app-bundle
 //= require application_non_webpack
 //= require highlight
-//= require workspace
 
 setInterval(function() {
     engines = document.getElementsByClassName('whales__belugas__engines__item');
