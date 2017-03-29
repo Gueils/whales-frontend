@@ -13,6 +13,7 @@ RUN set -ex \
 	&& rm docker.tgz
 
 RUN apt-get -y install unzip
+RUN mkdir -p /code
 
 ENV PATH=/usr/src/app/bin:$PATH RAILS_ENV=production RACK_ENV=production LANG=C.UTF-8
 
@@ -28,6 +29,6 @@ RUN cd /usr/src/app/client && npm install --save
 
 RUN cd /usr/src/app/client && npm run build:production:server
 
-RUN rails assets:precompile
+RUN cd /usr/src/app && rails assets:precompile
 
 EXPOSE 5000 3500
