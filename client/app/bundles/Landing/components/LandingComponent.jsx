@@ -10,12 +10,14 @@ export default class LandingComponent extends React.Component {
   };
 
   prepareLoading = () => {
-    const loadingAnimation = document.getElementsByClassName('loading-animation')[0];
     const prefixLoadingAnimation = document.getElementsByClassName('prefix-loading-animation')[0];
+    const linkToGithub = document.getElementById('load-repos');
 
-    prefixLoadingAnimation.innerHTML = 'Dockerizing...';
+    if (linkToGithub) {
+      linkToGithub.className = 'disabled';
+    }
 
-    new LoadingAnimation(loadingAnimation, ['&ndash;', '\\', '|', '/'], 150).animate();
+    prefixLoadingAnimation.innerHTML = 'Dockerizing...<img src="/whales.gif" alt="Whales" />';
   }
 
   handleSubmit = (event) => {
@@ -50,7 +52,7 @@ export default class LandingComponent extends React.Component {
   renderInputOrSelect = () => {
     if (this.props.repositories.length > 0) {
       return (
-        <select className="app__form-container__form__container__select" ref={(input) => { this.selectInput = input; } } value={this.props.repositories[0]} onChange={this.handleChange}>
+        <select className="app__form-container__form__container__select" ref={(input) => { this.selectInput = input; } } value={this.props.repositories[0]} onChange={this.handleChange} id="sourceRepos">
           {this.renderSelectOptions()}
         </select>
       )
@@ -65,6 +67,11 @@ export default class LandingComponent extends React.Component {
             className="app__form-container__form__container__input"
             placeholder="Paste a Repo URL"
           />
+
+          <span>
+          OR
+          </span>
+
           <a href="/auth/github" id="load-repos">
             <i className="fa fa-github fa-4x" aria-hidden="true"></i>
           </a>

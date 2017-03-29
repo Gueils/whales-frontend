@@ -22,7 +22,7 @@ class LandingController < ApplicationController
   private
 
   def repositories
-    repos = HTTParty.get('https://api.github.com/user/repos', headers: { 'Authorization': "token #{token}", 'User-Agent': 'WhalesIL' })
+    repos = HTTParty.get('https://api.github.com/user/repos?per_page=250', headers: { 'Authorization': "token #{token}", 'User-Agent': 'WhalesIL' })
 
     repos.map do |repo|
       key = "#{repo["html_url"]}.git"

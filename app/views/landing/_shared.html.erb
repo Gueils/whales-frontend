@@ -1,0 +1,221 @@
+<div class="whales__header">
+  <div class="whales__header__container">
+    <div class="whales__header__container__signature">
+      Whales by <span> Icalia Labs</span>
+    </div>
+    <div class="whales__header__container__logo">
+      <%= image_tag('whales-logo.png') %>
+    </div>
+  </div>
+</div>
+
+<%= react_component("LandingApp", props: state, prerender: false) %>
+
+<div class="whales__files">
+  <div class="whales__files__dockerfile">
+    <pre>
+      <code class="dockerfile"></code>
+    </pre>
+  </div>
+  <div class="whales__files__dockercompose">
+    <pre>
+      <code class="yaml"></code>
+    </pre>
+  </div>
+</div>
+
+<div class="whales__star-us">
+  <div>
+    <%= image_tag 'small-belugas.png' %>
+    Make the Belugas happy :)
+  </div>
+  <div>
+    <a href="https://www.github.com/Gueils">
+      <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+      <span>Star us on Github</span>
+    </a>
+  </div>
+</div>
+
+<div class="whales__slogan">
+  <span>Whales</span> is the easiest way<br/>
+  to dockerize your <br />applications.
+</div>
+
+<div class="whales__features">
+  <div class="whales__features__item">
+    <%= image_tag 'belugas-container.png', class: 'whales__features__item__container' %>
+
+    <div class="whales__features__item__title">
+      Dockerize your apps in a breeze
+    </div>
+
+    <div class="whales__features__item__content">
+      Dockerizing your apps was never this easy.
+      We present you the Whales ecosystem: A set
+      of tools to automagically dockerize your
+      applications.
+    </div>
+  </div>
+  <div class="whales__features__item">
+    <%= image_tag 'belugas-analyzer.png', class: 'whales__features__item__analyzer' %>
+
+    <div class="whales__features__item__title">
+      Belugas Analyzer
+    </div>
+
+    <div class="whales__features__item__content">
+      Whales uses Belugas analyzers to detect
+      multiple features on your project based on
+      a code static analysis. Thanks to this
+      analyzers we can detect  which language,
+      framework, database and dependecies your
+      project use.
+    </div>
+  </div>
+  <div class="whales__features__item">
+    <%= image_tag 'belugas-files.png', class: 'whales__features__item__files' %>
+
+    <div class="whales__features__item__title">
+      Usage
+    </div>
+
+    <div class="whales__features__item__content">
+      Be default Whales returns a Dockerfile and
+      a Docker Compose files. These are the files
+      you need to run Docker on development mode.
+      You can also obtain a Dockerfile for production if
+      needed.
+    </div>
+  </div>
+</div>
+
+<div class="whales__contribute">
+  <a href="https://www.github.com/Gueils">
+    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+    <span>Contribute on Github</span>
+  </a>
+</div>
+
+<div class="whales__belugas">
+  <div class="whales__belugas__waves">
+  </div>
+  <div class="whales__belugas__engines">
+    <div class="whales__belugas__engines__item">
+      <div class="whales__belugas__engines__item__pool">
+        <div class="whales__belugas__engines__item__pool__left">
+          belugas
+        </div>
+        <div class="whales__belugas__engines__item__pool__center">
+          <div class="whales__belugas__engines__item__pool__center__top">
+            <%= image_tag('beluga-baby-ruby.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__middle">
+            <%= image_tag('ruby-wave.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__bottom">
+            <%= image_tag('belugas-slider-bottom-beluga.png') %>
+          </div>
+        </div>
+        <div class="whales__belugas__engines__item__pool__right">
+          ruby
+        </div>
+      </div>
+      <a href="https://www.github.com/Gueils/belugas-ruby">
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        <span>belugas ruby on github</span>
+      </a>
+    </div>
+    <div class="whales__belugas__engines__item hidden">
+      <div class="whales__belugas__engines__item__pool">
+        <div class="whales__belugas__engines__item__pool__left">
+          belugas
+        </div>
+        <div class="whales__belugas__engines__item__pool__center">
+          <div class="whales__belugas__engines__item__pool__center__top">
+            <%= image_tag('beluga-baby-php.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__middle">
+            <%= image_tag('php-wave.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__bottom">
+            <%= image_tag('belugas-slider-bottom-beluga.png') %>
+          </div>
+        </div>
+        <div class="whales__belugas__engines__item__pool__right php">
+          php
+        </div>
+      </div>
+      <a href="https://www.github.com/Gueils/belugas-php" class="php">
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        <span>belugas php on github</span>
+      </a>
+    </div>
+    <div class="whales__belugas__engines__item hidden">
+      <div class="whales__belugas__engines__item__pool">
+        <div class="whales__belugas__engines__item__pool__left">
+          belugas
+        </div>
+        <div class="whales__belugas__engines__item__pool__center">
+          <div class="whales__belugas__engines__item__pool__center__top">
+            <%= image_tag('beluga-baby-java.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__middle">
+            <%= image_tag('java-wave.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__bottom">
+            <%= image_tag('belugas-slider-bottom-beluga.png') %>
+          </div>
+        </div>
+        <div class="whales__belugas__engines__item__pool__right java">
+          java
+        </div>
+      </div>
+      <a href="https://www.github.com/Gueils/belugas-java" class="java">
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        <span>belugas java on github</span>
+      </a>
+    </div>
+    <div class="whales__belugas__engines__item hidden">
+      <div class="whales__belugas__engines__item__pool">
+        <div class="whales__belugas__engines__item__pool__left">
+          belugas
+        </div>
+        <div class="whales__belugas__engines__item__pool__center">
+          <div class="whales__belugas__engines__item__pool__center__top">
+            <%= image_tag('beluga-baby-python.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__middle">
+            <%= image_tag('python-wave.png') %>
+          </div>
+          <div class="whales__belugas__engines__item__pool__center__bottom">
+            <%= image_tag('belugas-slider-bottom-beluga.png') %>
+          </div>
+        </div>
+        <div class="whales__belugas__engines__item__pool__right python">
+          python
+        </div>
+      </div>
+      <a href="https://www.github.com/Gueils/belugas-python" class="python">
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        <span>belugas python on github</span>
+      </a>
+    </div>
+  </div>
+  <div class="whales__belugas__footer">
+    Inside the Whales ecosystem, we have a group of <br />belugas
+    dedicated to run feature detector engines on<br />
+    your local machine inside of Docker containers.<br />
+    Currently we support 4 languages, with more coming in<br />
+    the Pipeline.
+  </div>
+</div>
+
+<div class="whales__footer">
+  <a href="http://www.wtfpl.net/">Distributed under the Do Whatever the Fuck you Want License</a>
+</div>
+
+<script>
+ WorkspaceController.hideFiles().showRestOfTheLanding();
+ hljs.initHighlightingOnLoad();
+</script>

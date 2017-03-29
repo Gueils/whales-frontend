@@ -13,12 +13,12 @@ const config = {
         'es5-shim/es5-shim',
         'es5-shim/es5-sham',
         'babel-polyfill',
-        './app/bundles/HelloWorld/startup/registration',
+        './app/bundles/Landing/startup/registration',
     ],
 
     output: {
         filename: 'webpack-bundle.js',
-        path: '../app/assets/webpack',
+        path: '/code/app/assets/webpack',
     },
 
     resolve: {
@@ -39,7 +39,7 @@ const config = {
         loaders: [
             {
                 test: require.resolve('react'),
-                loader: 'imports?shim=es5-shim/es5-shim&sham=es5-shim/es5-sham',
+                loader: 'imports-loader?shim=es5-shim/es5-shim&sham=es5-shim/es5-sham',
             },
             {
                 test: /\.jsx?$/,
