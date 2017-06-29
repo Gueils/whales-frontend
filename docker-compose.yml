@@ -40,3 +40,5 @@ services:
       CURRENT_DIRECTORY: ${PWD}
       API_BASE_URI: whales.herokuapp.com
       SECRET_KEY_BASE: 5680a9689eaacab848b00f1a9ae36288699dde6efcd68e74706ed6d752fd53435150d034276cc6af446986e6c312b588d35864a68cdb4e965ed645ff92478402
+    env_file:
+      - dev.env
