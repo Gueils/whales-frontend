@@ -10,7 +10,7 @@ class Cli
   end
 
   def analize
-    response = `docker run --interactive --tty --rm --env API_BASE_URI="#{ENV['API_BASE_URI']}" --env BELUGAS_CODE="#{global_directory}" --volume /var/run/docker.sock:/var/run/docker.sock --volume "#{global_directory}":/code icalialabs/whales`
+    response = `docker run --interactive --tty --rm --env API_BASE_URI="#{ENV['API_BASE_URI']}" --env BELUGAS_CODE="#{global_directory}" --volume /var/run/docker.sock:/var/run/docker.sock --volume "#{global_directory}":/code gueils/whales:development`
 
     raise "Couldn't process this repo" unless $?.success?
 
