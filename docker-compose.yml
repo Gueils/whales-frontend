@@ -19,7 +19,7 @@ services:
       POSTGRES_PASSWORD: P4Ssw0rD!
 
   web: &app
-    image: whalesil/whales-frontend:latest
+    image: gueils/whales-frontend:development
     command: foreman start -f Procfile
     working_dir: /usr/src/app
     volumes:
