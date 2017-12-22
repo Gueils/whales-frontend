@@ -120,8 +120,9 @@
 
 .whales {
   &__header {
-    background-color: rgba(70,208,237,0.15);
-    height: 210px;
+    // background-color: rgba(70,208,237,0.15);
+    background: linear-gradient(0, #0057c4, #46D0ED);
+    height: 50rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -129,57 +130,63 @@
     &__container {
       display: flex;
       width: 1200px;
+      flex-direction: row;
+
+      &__half {
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+      }
 
       &__signature {
         position: absolute;
         right: 40px;
-        bottom: -30px;
+        top: 30px;
         font-size: 14px;
+        color: #fff;
 
         span {
-          color: #ff4444;
+          color: #fff;
           font-weight: bold;
         }
       }
 
       &__logo {
         z-index: 12;
-        margin: 127px auto;
+        margin: 0 auto;
+        padding-top: 180px;
 
         img {
           display: flex;
+          margin: 0 auto;
           align-self: center;
-          height: 105px;
-          width: 161px;
+          height: 160px;
         }
       }
-    }
-  }
 
-  &__header::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-repeat: repeat;
-    height: 20px;
-    background-size: 40px 40px;
-    background-image:
-    radial-gradient(circle at 20px -10px, transparent 24px, white 26px);
+      &__text {
+        text-align: center;
+        margin-top: 80px;
+        color: #fff;
+      }
+    }
   }
 
   &__header::after{
     content: "";
     position: absolute;
-    left: 0;
+    width: 100vw;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-image: url(curve-border-2.svg);
+    // left: 0;
     bottom: 0;
-    right: 0;
-    background-repeat: repeat;
-    height: 30px;
-    background-size: 80px 40px;
-    background-image:
-    radial-gradient(circle at 20px 30px, white 24px, transparent 26px);
+    // right: 0;
+    // background-repeat: repeat;
+    // height: 30px;
+    // background-size: 80px 40px;
+    // background-image:
+    // radial-gradient(circle at 20px 30px, white 24px, transparent 26px);
   }
 
   &__files {
@@ -532,50 +539,61 @@
       flex-direction: column;
 
       &__label {
-        font-size: 48px;
-        padding: 20px 0;
+        // font-size: 30px;
+        // padding: 20px 0;
+        display: none;
       }
 
       &__container {
-        margin: 53px 0 104px 0;
+        margin-top: 140px;
         display: flex;
 
         div {
           display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         &__input,
         &__input:focus{
-          background-color: #ECF4FF;
-          width: 542px;
+          background-color: rgba(220, 237, 250, 0.3);
+          color: white;
+          width: 430px;
           outline: none;
           border-radius: 10px;
-          border: 2px solid #0066ee;
-          font-size: 24px;
-          line-height: 70px;
-          padding: 5px 10px;
+          border: 2px solid #fff;
+          font-size: 20px;
+          line-height: 50px;
+          padding: 5px 5px;
           text-align: center;
-        }
-
-        select {
-          font-size: 24px;
-          line-height: 70px;
-          border-radius: 10px;
-          border: 2px solid #0066ee;
-          background-color: #ECF4FF;
         }
 
         span {
           display: flex;
           align-items: center;
-          font-size: 37px;
-          margin: 0 10px 0 30px;
+          font-size: 25px;
+          margin: 20px auto;
         }
 
         a {
           display: flex;
           align-items: center;
-          margin: auto auto auto 20px;
+
+          i {
+            display: none;
+          }
+
+          &:after {
+            content: "Sign in with github";
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            padding-left: 45px;
+            line-height: 30px;
+            text-decoration: underline;
+            background-image: url("GitHub-logo.svg");
+            background-repeat: no-repeat;
+            background-size: 30px;
+          }
         }
       }
     }

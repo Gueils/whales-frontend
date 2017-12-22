@@ -8,7 +8,7 @@
 
 html, body {
   background: white;
-  color: #334B57;
+  color: #fff;
   font-family: 'Space Mono', monospace;
   font-size: 16px;
 }
@@ -16,6 +16,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background-color: #003475;
 }
 
 a {

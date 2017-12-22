@@ -15,21 +15,29 @@ services:
       - 5434:5432
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ./tmp:/tmp
     environment:
       POSTGRES_PASSWORD: P4Ssw0rD!
 
   web: &app
-    image: gueils/whales-frontend:development
-    command: foreman start -f Procfile
+    image: icalialabs/whales-frontend:development
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    command: foreman start -f Procfile.hot
     working_dir: /usr/src/app
+    entrypoint: /usr/src/app/development-entrypoint
     volumes:
+      - .:/usr/src/app
       - gems:/usr/local/bundle
       - node_modules:/usr/src/app/client/node_modules
       - /var/run/docker.sock:/var/run/docker.sock
-      - /tmp:/code
+      - ./repo_tmp:/code
+
     stdin_open: true
     tty: true
     ports:
+      - 3000:3000
       - 80:5000
       - 3500:3500
     links:
@@ -37,8 +45,9 @@ services:
     environment: &app_environment
       PATH: /usr/src/app/bin:/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       DATABASE_URL: postgres://postgres:P4Ssw0rD!@db:5432/whales_frontend_development
+      RAILS_ENV: development
+      RACK_ENV: development
       CURRENT_DIRECTORY: ${PWD}
       API_BASE_URI: whales.herokuapp.com
-      SECRET_KEY_BASE: 5680a9689eaacab848b00f1a9ae36288699dde6efcd68e74706ed6d752fd53435150d034276cc6af446986e6c312b588d35864a68cdb4e965ed645ff92478402
     env_file:
       - dev.env

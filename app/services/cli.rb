@@ -22,6 +22,6 @@ class Cli
   end
 
   def global_directory
-    "/tmp/#{downloaded_file_path}"
+   "#{ENV["CURRENT_DIRECTORY"]}/repo_tmp/#{downloaded_file_path}"
   end
 end

@@ -3,13 +3,19 @@
     <div class="whales__header__container__signature">
       Whales by <span> Icalia Labs</span>
     </div>
-    <div class="whales__header__container__logo">
-      <%= image_tag('whales-logo.png') %>
+    <div class="whales__header__container__half">
+      <div class="whales__header__container__logo">
+        <%= image_tag('whales-logo-white.svg') %>
+      </div>
+      <div class="whales__header__container__text">
+        The easiest way to dockerize your applications
+      </div>
+    </div>
+    <div class="whales__header__container__half">
+      <%= react_component("LandingApp", props: state, prerender: false) %>
     </div>
   </div>
 </div>
-
-<%= react_component("LandingApp", props: state, prerender: false) %>
 
 <div class="whales__files">
   <div class="whales__files__dockerfile">
