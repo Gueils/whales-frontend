@@ -43,26 +43,22 @@
   </div>
 </div>
 
-<div class="whales__slogan">
-  <span>Whales</span> is the easiest way<br/>
-  to dockerize your <br />applications.
+<div class="whales__description">
+  <%= image_tag 'belugas-container.svg', class: 'whales__features__item__container' %>
+
+  <div class="whales__features__item__title">
+    Dockerize your apps in a breeze
+  </div>
+
+  <div class="whales__description__content">
+    Dockerizing your apps was never this easy.
+    We present to you the <span>Whales</span> ecosystem: a
+    set of tools to automatically dockerize
+    your applications.
+  </div>
 </div>
 
 <div class="whales__features">
-  <div class="whales__features__item">
-    <%= image_tag 'belugas-container.png', class: 'whales__features__item__container' %>
-
-    <div class="whales__features__item__title">
-      Dockerize your apps in a breeze
-    </div>
-
-    <div class="whales__features__item__content">
-      Dockerizing your apps was never this easy.
-      We present you the Whales ecosystem: A set
-      of tools to automagically dockerize your
-      applications.
-    </div>
-  </div>
   <div class="whales__features__item">
     <%= image_tag 'belugas-analyzer.png', class: 'whales__features__item__analyzer' %>
 
@@ -71,12 +67,10 @@
     </div>
 
     <div class="whales__features__item__content">
-      Whales uses Belugas analyzers to detect
-      multiple features on your project based on
-      a code static analysis. Thanks to this
-      analyzers we can detect  which language,
-      framework, database and dependecies your
-      project use.
+      Whales uses analizers to detect multiple features
+      in your project based on a code static analysis.
+      Thanks to these analyzers we can detect which language,
+      framework, database, and dependencies your project uses.
     </div>
   </div>
   <div class="whales__features__item">
@@ -87,11 +81,10 @@
     </div>
 
     <div class="whales__features__item__content">
-      Be default Whales returns a Dockerfile and
-      a Docker Compose files. These are the files
-      you need to run Docker on development mode.
-      You can also obtain a Dockerfile for production if
-      needed.
+      By default, Whales returns a Dockerfile and a Docker
+      Compose file. These are what you need to run Docker
+      on development mode. You can also obtain a Dockerfile
+      for production if needed.
     </div>
   </div>
 </div>
@@ -104,8 +97,20 @@
 </div>
 
 <div class="whales__belugas">
-  <div class="whales__belugas__waves">
+  <div class="whales__belugas__info">
+    <div class="whales__belugas__title">
+      Supported Languages
+    </div>
+    <div class="whales__belugas__footer">
+      Inside the Whales ecosystem, we have what we call Belugas.
+      Belugas are analyzers dedicated to run feature detector
+      engines on your local machine inside of Docker containers.
+      <br/><br/>
+      We currently support 4 languages: Java, Ruby, Python and Php,
+      with more coming in the pipeline.
+    </div>
   </div>
+
   <div class="whales__belugas__engines">
     <div class="whales__belugas__engines__item">
       <div class="whales__belugas__engines__item__pool">
@@ -183,17 +188,11 @@
       </a>
     </div>
   </div>
-  <div class="whales__belugas__footer">
-    Inside the Whales ecosystem, we have a group of <br />belugas
-    dedicated to run feature detector engines on<br />
-    your local machine inside of Docker containers.<br />
-    Currently we support 3 languages, with more coming in<br />
-    the Pipeline.
-  </div>
+
 </div>
 
 <div class="whales__footer">
-  <a href="http://www.wtfpl.net/">Distributed under the Do Whatever the Fuck you Want License</a>
+  <a href="http://www.wtfpl.net/">Distributed under the WTFPL – Do What the Fuck You Want to Public License</a>
 </div>
 
 <script>

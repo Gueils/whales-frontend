@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 @-moz-keyframes floating {
   from {
     -moz-transform: translateY(0);
@@ -120,30 +122,29 @@
 
 .whales {
   &__header {
-    // background-color: rgba(70,208,237,0.15);
-    background: linear-gradient(0, #0057c4, #46D0ED);
-    height: 50rem;
-    position: relative;
+    background: linear-gradient(0, #0057c4, rgba(70, 208, 237, 0.9));
     display: flex;
+    height: 50rem;
     justify-content: center;
+    position: relative;
 
     &__container {
       display: flex;
-      width: 1200px;
       flex-direction: row;
+      width: 1200px;
 
       &__half {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
         width: 50%;
       }
 
       &__signature {
+        color: #fff;
+        font-size: 14px;
         position: absolute;
         right: 40px;
         top: 30px;
-        font-size: 14px;
-        color: #fff;
 
         span {
           color: #fff;
@@ -152,82 +153,75 @@
       }
 
       &__logo {
-        z-index: 12;
         margin: 0 auto;
         padding-top: 180px;
+        z-index: 12;
 
         img {
-          display: flex;
-          margin: 0 auto;
           align-self: center;
+          display: flex;
           height: 160px;
+          margin: 0 auto;
         }
       }
 
       &__text {
-        text-align: center;
-        margin-top: 80px;
         color: #fff;
+        margin-top: 80px;
+        text-align: center;
       }
     }
   }
 
   &__header::after{
     content: "";
+    background-image: url(curve-border-2.svg);
+    background-repeat: no-repeat;
+    bottom: 0;
+    height: 120px;
     position: absolute;
     width: 100vw;
-    height: 120px;
-    background-repeat: no-repeat;
-    background-image: url(curve-border-2.svg);
-    // left: 0;
-    bottom: 0;
-    // right: 0;
-    // background-repeat: repeat;
-    // height: 30px;
-    // background-size: 80px 40px;
-    // background-image:
-    // radial-gradient(circle at 20px 30px, white 24px, transparent 26px);
   }
 
   &__files {
+    align-self:center;
     display: flex;
     flex-direction: row;
-    align-self:center;
-    width: 1097px;
     justify-content: space-between;
     margin: -100px 0 60px 0;
+    width: 1097px;
 
     &__dockerfile,
     &__dockercompose {
-      display: flex;
       background-color: #2b2b2b;
       border-radius: 3px;
+      display: flex;
       padding: 20px;
       width: 530px;
 
       a {
-        z-index: 1000;
-        left: 480px;
-        top: -10px;
-        position: relative;
         color: white;
+        left: 480px;
+        position: relative;
+        top: -10px;
+        z-index: 1000;
       }
     }
   }
 
   &__star-us {
+    align-self: center;
     display: flex;
     flex-direction: column;
-    align-self: center;
 
     a {
+      background-color: #006CF4;
+      border-radius: 2px;
+      color: white;
       display: flex;
       flex-direction: row;
       line-height: 28px;
       padding: 10px 30px;
-      border-radius: 2px;
-      background-color: #006CF4;
-      color: white;
 
       span {
         margin: auto auto auto 10px;
@@ -237,8 +231,8 @@
 
   &__star-us > div {
     display: flex;
-    margin: 10px 0 20px 0;
     line-height: 26px;
+    margin: 10px 0 20px 0;
 
     img {
       margin: 0 10px 0 -10px;
@@ -247,9 +241,9 @@
 
   &__slogan {
     align-self: center;
-    margin: 0px 0 114px 0;
     font-size: 32px;
     justify-content: center;
+    margin: 0px 0 114px 0;
     text-align: center;
 
     span {
@@ -258,12 +252,39 @@
     }
   }
 
+  &__description {
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans";
+    margin: 150px 0 150px 0;
+    text-align: center;
+    width: 38%;
+
+    img {
+      height: 200px;
+      width: auto;
+    }
+
+    &__content {
+      font-size: 19px;
+      line-height: 25px;
+      margin-top: 27px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
   &__features {
+    align-self: center;
     display: flex;
     flex-direction: row;
-    align-self: center;
-    width: 1097px;
+    font-family: "Open Sans";
     justify-content: space-between;
+    width: 900px;
 
     &__item {
       display: flex;
@@ -272,34 +293,34 @@
       width: 351px;
 
       &__container {
-        height: 111px;
-        width: 109px;
         align-self: center;
+        height: 111px;
         margin: 0 0 34px 0;
+        width: 109px;
       }
 
       &__files {
-        height: 103px;
-        width: 183px;
         align-self: center;
+        height: 103px;
         margin: 0 0 42px 0;
+        width: 183px;
       }
 
       &__analyzer {
+        align-self: center;
         height: 145px;
         width: 109px;
-        align-self: center;
       }
 
       &__title {
         font-size: 24px;
-        margin: 56px auto 21px auto;
         font-weight: bold;
-        color: #042B5C;
+        margin: 56px 0 21px 0;
       }
 
       &__content {
         font-size: 16px;
+        line-height: 25px;
       }
 
       &__analyzer + &__title + &__content {
@@ -313,19 +334,19 @@
   }
 
   &__contribute {
+    align-self: center;
     display: flex;
     flex-direction: row;
-    align-self: center;
-    margin: 91px 0 0 0;
+    margin: 91px 0 200px 0;
 
     a {
+      background-color: #fff;
+      border-radius: 2px;
+      color: #000;
       display: flex;
       flex-direction: row;
       line-height: 28px;
       padding: 10px 30px;
-      border-radius: 2px;
-      background-color: #006CF4;
-      color: white;
 
       span {
         margin: auto auto auto 10px;
@@ -334,75 +355,53 @@
   }
 
   &__footer {
+    align-self: center;
     display: flex;
     flex-direction: row;
-    align-self: center;
-    width: 60%;
+    font-size: 10px;
     font-weight: bold;
     justify-content: center;
-    padding: 50px 20px;
-    font-size: 14px;
+    padding: 30px 20px;
+    width: 60%;
   }
 
   &__belugas {
+    background-color: #DCEDFA;
     display: flex;
-    background-color: #f4f4f4;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
 
-    &__waves {
-      background-color: white;
-      height: 100px;
-      position: relative;
-    }
-
-    &__waves::before{
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-repeat: repeat;
-      height: 20px;
-      background-size: 40px 40px;
-      background-image:
-      radial-gradient(circle at 20px -10px, transparent 24px, #f4f4f4 26px);
-    }
-
-    &__waves::after{
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-repeat: repeat;
-      height: 30px;
-      background-size: 80px 40px;
-      background-image:
-      radial-gradient(circle at 20px 30px, #f4f4f4 24px, transparent 26px);
+    &__info {
+      color: #000;
+      flex-direction: column;
+      width: 40%;
+      margin-left: 50px;
+      line-height: 25px;
     }
 
     &__engines {
-      margin: 143px auto auto auto;
-      display: flex;
       align-self: center;
-      width: 600px;
+      color: #000;
+      display: flex;
       justify-content: center;
+      margin: 143px auto;
       overflow: hidden;
+      width: 600px;
 
       &__item {
         display: inline-flex;
         flex-direction: column;
 
         a {
+          align-self: center;
+          background-color: #EE0F14;
+          border-radius: 2px;
+          color: white;
           display: flex;
           flex-direction: row;
+          height: 66px;
           line-height: 66px;
           width: 332px;
-          height: 66px;
-          border-radius: 2px;
-          background-color: #EE0F14;
-          color: white;
-          align-self: center;
 
           span {
             margin: auto auto auto 10px;
@@ -442,61 +441,61 @@
             margin: 0 20px;
 
             &__top {
-              display: flex;
               align-self: center;
+              display: flex;
 
               img {
-                -webkit-animation: floating 5s infinite;
-                -webkit-animation-timing-function: ease-in-out;
-                -moz-animation: floating 5s infinite;
                 -moz-animation-timing-function: ease-in-out;
-                -ms-animation: floating 5s infinite;
+                -moz-animation: floating 5s infinite;
                 -ms-animation-timing-function: ease-in-out;
-                -o-animation: floating 5s infinite;
+                -ms-animation: floating 5s infinite;
                 -o-animation-timing-function: ease-in-out;
-                animation: floating 5s infinite;
+                -o-animation: floating 5s infinite;
+                -webkit-animation-timing-function: ease-in-out;
+                -webkit-animation: floating 5s infinite;
                 animation-timing-function: ease-in-out;
+                animation: floating 5s infinite;
               }
             }
 
             &__middle {
-              display: flex;
               align-self: center;
+              display: flex;
               margin: 20px 0 20px 0;
 
               img {
-                width: 198px;
                 height: 23px;
+                width: 198px;
               }
             }
             &__bottom {
-              display: flex;
               align-self: center;
+              display: flex;
 
               img {
-                -webkit-animation: floating 5s infinite;
-                -webkit-animation-timing-function: ease-in-out;
-                -webkit-animation-delay: 1.618s;
-                -moz-animation: floating 5s infinite;
-                -moz-animation-timing-function: ease-in-out;
                 -moz-animation-delay: 1.618s;
-                -ms-animation: floating 5s infinite;
-                -ms-animation-timing-function: ease-in-out;
+                -moz-animation-timing-function: ease-in-out;
+                -moz-animation: floating 5s infinite;
                 -ms-animation-delay: 1.618s;
-                -o-animation: floating 5s infinite;
-                -o-animation-timing-function: ease-in-out;
+                -ms-animation-timing-function: ease-in-out;
+                -ms-animation: floating 5s infinite;
                 -o-animation-delay: 1.618s;
-                animation: floating 5s infinite;
-                animation-timing-function: ease-in-out;
+                -o-animation-timing-function: ease-in-out;
+                -o-animation: floating 5s infinite;
+                -webkit-animation-delay: 1.618s;
+                -webkit-animation-timing-function: ease-in-out;
+                -webkit-animation: floating 5s infinite;
                 animation-delay: 1.618s;
+                animation-timing-function: ease-in-out;
+                animation: floating 5s infinite;
              }
 
             }
           }
 
           &__right {
-            font-size: 42px;
             color: #EE0F14;
+            font-size: 42px;
             padding: 82px 0 0 0;
           }
           &__right.php { color: #7564B8; }
@@ -506,104 +505,112 @@
       }
     }
 
-    &__footer {
-      display: flex;
+    &__title {
       align-self: center;
-      width: 50%;
-      justify-content: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin: 250px auto 60px auto;
       text-align: center;
-      margin: 153px auto 80px auto;
+    }
+
+    &__footer {
+      align-self: center;
+      display: flex;
+      font-family: "Open Sans", sans-serif;
+      justify-content: center;
+      margin: 0 auto;
+      text-align: center;
+      width: 90%
     }
   }
 }
 
 .app {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: row;
+  justify-content: center;
 
   &__form-container {
-    flex-grow: 1;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
     margin: 103px auto;
 
     &__form {
-      flex-grow: 1;
-      display: flex;
       align-items: center;
-      justify-content: space-between;
+      display: flex;
       flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
 
       &__label {
-        // font-size: 30px;
-        // padding: 20px 0;
-        display: none;
+        font-size: 25px;
+        margin-top: 100px;
       }
 
       &__container {
-        margin-top: 140px;
         display: flex;
+        margin-top: 50px;
 
         div {
+          align-items: center;
           display: flex;
           flex-direction: column;
-          align-items: center;
         }
 
         &__input,
         &__input:focus{
           background-color: rgba(220, 237, 250, 0.3);
-          color: white;
-          width: 430px;
-          outline: none;
           border-radius: 10px;
           border: 2px solid #fff;
+          color: white;
           font-size: 20px;
           line-height: 50px;
+          outline: none;
           padding: 5px 5px;
           text-align: center;
+          width: 430px;
         }
 
         span {
-          display: flex;
           align-items: center;
+          display: flex;
           font-size: 25px;
           margin: 20px auto;
         }
 
         a {
-          display: flex;
           align-items: center;
+          display: flex;
 
           i {
             display: none;
           }
 
           &:after {
-            content: "Sign in with github";
-            font-family: 'Space Mono', monospace;
-            font-size: 18px;
-            padding-left: 45px;
-            line-height: 30px;
-            text-decoration: underline;
             background-image: url("GitHub-logo.svg");
             background-repeat: no-repeat;
             background-size: 30px;
+            content: "Sign in with github";
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            line-height: 30px;
+            padding-left: 45px;
+            text-decoration: underline;
           }
         }
       }
     }
 
     &__files {
-      flex-grow: 1;
-      display: flex;
       align-items: center;
-      justify-content: space-between;
+      display: flex;
       flex-direction: row;
+      flex-grow: 1;
+      justify-content: space-between;
 
       &__dockerfile {
         flex-grow: 1;

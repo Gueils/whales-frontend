@@ -69,7 +69,7 @@ export default class LandingComponent extends React.Component {
           />
 
           <span>
-          OR
+          or
           </span>
 
           <a href="/auth/github" id="load-repos">
@@ -85,7 +85,7 @@ export default class LandingComponent extends React.Component {
       <div className="app__form-container">
         <form className="app__form-container__form" onSubmit={this.handleSubmit}>
           <label htmlFor="name" className="app__form-container__form__label">
-            <span className="prefix-loading-animation">Dockerize your App Right Away</span><span className="loading-animation"></span>
+            <span className="prefix-loading-animation"></span><span className="loading-animation"></span>
           </label>
           <div className="app__form-container__form__container">
             {this.renderInputOrSelect()}
