@@ -124,7 +124,7 @@
   &__header {
     background: linear-gradient(0, #0057c4, rgba(70, 208, 237, 0.9));
     display: flex;
-    height: 50rem;
+    height: 40rem;
     justify-content: center;
     position: relative;
 
@@ -176,11 +176,12 @@
   &__header::after{
     content: "";
     background-image: url(curve-border-2.svg);
-    background-repeat: no-repeat;
+    //background-repeat: no-repeat;
     bottom: 0;
     height: 120px;
     position: absolute;
     width: 100vw;
+    background-repeat: repeat-x;
   }
 
   &__files {
@@ -188,7 +189,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: -100px 0 60px 0;
+    margin: 10px 0 60px 0;
     width: 1097px;
 
     &__dockerfile,
@@ -621,4 +622,8 @@
       }
     }
   }
+}
+
+#sourceUrl {
+  color: white; 
 }
